@@ -30,15 +30,15 @@ life.on("begYou", function (who) {
 });
 
 life.on("begYou", function (who) {
+    console.log("给你家" + who + "喂西瓜");
+});
+
+life.on("begYou", function (who) {
     console.log("给你家" + who + "按摩");
 });
 
 life.on("begYou", function (who) {
-    console.log("给你家" + who + "削苹果");
-});
-
-life.on("begYou", function (who) {
-    console.log("给你家" + who + "喂西瓜");
+    console.log("给你家" + who + "搓背");
 });
 
 life.on("begYou", function (who) {
@@ -46,32 +46,33 @@ life.on("begYou", function (who) {
 });
 
 life.on("begYou", function (who) {
-    console.log("给你家" + who + "...anotherThing");
+    console.log("给你家" + who + "...anotherthing");
 });
 
-life.on("begYou", function (who){
-    console.log("给你家" + who + "......我快要累死了");
+life.on("begYou", function (who) {
+    console.log("给你家" + who + "......你想累死我呀");
 });
 
-life.on("loveYou", function (who){
+life.on("loveYou", function (who) {
     console.log("给你家" + who + "买化妆品");
 });
 
-life.on("loveYou", function (who){
+life.on("loveYou", function (who) {
     console.log("给你家" + who + "买衣服");
 });
 
 //life.removeListener("begYou", water);
-life.removeAllListeners("begYou");
+//life.removeAllListeners();
+life.removeAllListeners("loveYou");
 
-var begYouListenerCount = life.listeners("begYou").length;
-var loveYouListenerCount = EventEmitter.listenerCount(life, "loveYou");
-console.log(begYouListenerCount);
-console.log(loveYouListenerCount);
+var IBegYouCount = life.listeners("begYou").length;
+console.log(IBegYouCount);
+var ILoveYouCount = EventEmitter.listenerCount(life, "loveYou");
+console.log(ILoveYouCount);
 
-var begYouListener = life.emit("begYou", "汉子");
-var loveYouListener  = life.emit("loveYou", "妹子");
-var kissYouListener = life.emit("kissYou", "汉子妹子");
-console.log(begYouListener);
-console.log(loveYouListener);
-console.log(kissYouListener);
+var IBegYou = life.emit("begYou", "汉子");
+var ILoveYou = life.emit("loveYou", "妹子");
+var IMissYou = life.emit("missYou", "妹子汉子");
+console.log(IBegYou);
+console.log(ILoveYou);
+console.log(IMissYou);
